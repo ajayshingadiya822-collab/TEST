@@ -1,310 +1,400 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" data-theme="dark">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ajay Shingadiya | Enterprise Data Engineering &amp; Automation</title>
-    <meta name="description"
-        content="Ajay Shingadiya — Senior Data Engineer &amp; Automation Specialist. Enterprise-grade data extraction, automation, and chemical intelligence from Ahmedabad, India.">
-    <meta property="og:title" content="Ajay Shingadiya | Enterprise Data Engineering">
-    <meta property="og:description"
-        content="Mission-critical data pipelines and workflow automation for modern enterprises.">
-    <meta property="og:url" content="https://ajayshingadiya.vercel.app">
-    <link rel="stylesheet" href="/styles.css">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Ajay Shingadiya | Enterprise Data Engineering &amp; Automation
+    </title>
+    <meta
+      name="description"
+      content="Ajay Shingadiya — Senior Data Engineer &amp; Automation Specialist. Enterprise-grade data extraction, automation, and chemical intelligence from Ahmedabad, India."
+    />
+    <meta
+      property="og:title"
+      content="Ajay Shingadiya | Enterprise Data Engineering"
+    />
+    <meta
+      property="og:description"
+      content="Mission-critical data pipelines and workflow automation for modern enterprises."
+    />
+    <meta property="og:url" content="https://ajayshingadiya.vercel.app" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Ajay Shingadiya Data Engineering",
-    "url": "https://ajayshingadiya.vercel.app",
-    "telephone": "+91 9313564576",
-    "email": "ajayshingadiya822@gmail.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Ahmedabad",
-      "addressRegion": "Gujarat",
-      "addressCountry": "IN"
-    }
-  }
-  </script>
-</head>
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Ajay Shingadiya Data Engineering",
+        "url": "https://ajayshingadiya.vercel.app",
+        "telephone": "+91 9313564576",
+        "email": "ajayshingadiya822@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Ahmedabad",
+          "addressRegion": "Gujarat",
+          "addressCountry": "IN"
+        }
+      }
+    </script>
+  </head>
 
-<body>
-
+  <body>
     <!-- Particle canvas -->
     <canvas id="particle-canvas"></canvas>
 
     <!-- ── HEADER ─────────────────────────────────────────── -->
     <header class="header">
-        <nav class="nav-container container">
-            <div class="logo"><a href="/">Ajay Shingadiya</a></div>
-            <button class="menu-toggle" aria-label="Toggle navigation">
-                <i data-lucide="menu"></i>
-            </button>
-            <ul class="nav-menu">
-                <li><a href="/index.html" class="active">Home</a></li>
-                <li><a href="/services.html">Services</a></li>
-                <li><a href="/strategic-partners.html">Partnership</a></li>
-                <li><a href="/chemical-data.html">Chemical Data</a></li>
-                <li><a href="/profile.html">Who I Am</a></li>
-                <li><a href="/contact.html">Contact</a></li>
-            </ul>
-            <button class="theme-toggle" aria-label="Toggle Theme">
-                <i data-lucide="sun"></i>
-            </button>
-        </nav>
+      <nav class="nav-container container">
+        <div class="logo"><a href="/">Ajay Shingadiya</a></div>
+        <button class="menu-toggle" aria-label="Toggle navigation">
+          <i data-lucide="menu"></i>
+        </button>
+        <ul class="nav-menu">
+          <li><a href="/index.html" class="active">Home</a></li>
+          <li><a href="/services.html">Services</a></li>
+          <li><a href="/strategic-partners.html">Partnership</a></li>
+          <li><a href="/chemical-data.html">Chemical Data</a></li>
+          <li><a href="/profile.html">Who I Am</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+        <button class="theme-toggle" aria-label="Toggle Theme">
+          <i data-lucide="sun"></i>
+        </button>
+      </nav>
     </header>
 
     <main>
+      <!-- ── HERO ─────────────────────────────────────────── -->
+      <section class="hero">
+        <div class="hero-orb hero-orb-1"></div>
+        <div class="hero-orb hero-orb-2"></div>
+        <div class="hero-orb hero-orb-3"></div>
 
-        <!-- ── HERO ─────────────────────────────────────────── -->
-        <section class="hero">
-            <div class="hero-orb hero-orb-1"></div>
-            <div class="hero-orb hero-orb-2"></div>
-            <div class="hero-orb hero-orb-3"></div>
-
-            <div class="container">
-                <!-- Title at TOP -->
-                <div class="hero-head">
-                    <div class="hero-badge">
-                        <span class="pulse"></span>
-                        Available for Enterprise Projects
-                    </div>
-                    <h1 class="hero-title">
-                        Engineered for <span class="highlight" id="typed-text"
-                            data-phrases='["Massive Data Extraction.", "Intelligent Automation.", "Digital Infrastructure.", "Enterprise Scale.", "Process Engineering."]'>Massive
-                            Data Extraction.</span>
-                    </h1>
-                </div>
-
-                <!-- Subtitle + CTA + Stats BELOW -->
-                <div class="hero-body">
-                    <p class="hero-subtitle">
-                        We architect high-performance data systems that eliminate manual overhead and
-                        unlock hidden value in your technical infrastructure — at enterprise scale.
-                    </p>
-
-                    <div class="hero-cta">
-                        <a href="/contact.html" class="btn btn-primary">
-                            Start a Project <i data-lucide="zap"></i>
-                        </a>
-                        <a href="/services.html" class="btn btn-secondary">
-                            View Services <i data-lucide="arrow-right"></i>
-                        </a>
-                    </div>
-
-                    <div class="hero-stats">
-                        <div class="stat-item">
-                            <span class="stat-number" data-count="100" data-suffix="K+">0</span>
-                            <span class="stat-label">Records Processed Daily</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number" data-count="50" data-suffix="+">0</span>
-                            <span class="stat-label">Projects Delivered</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number" data-count="5" data-suffix="★">0</span>
-                            <span class="stat-label">Client Rating</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number" data-count="3" data-suffix=" Yrs">0</span>
-                            <span class="stat-label">Enterprise Experience</span>
-                        </div>
-                    </div>
-                </div>
+        <div class="container">
+          <!-- Title at TOP -->
+          <div class="hero-head">
+            <div class="hero-badge">
+              <span class="pulse"></span>
+              Available for Enterprise Projects
             </div>
-        </section>
+            <h1 class="hero-title">
+              Engineered for
+              <span
+                class="highlight"
+                id="typed-text"
+                data-phrases='["Massive Data Extraction.", "Intelligent Automation.", "Digital Infrastructure.", "Enterprise Scale.", "Process Engineering."]'
+                >Massive Data Extraction.</span
+              >
+            </h1>
+          </div>
 
-        <!-- ── BENTO SERVICES ──────────────────────────────── -->
-        <section class="container" style="padding-top:0;">
-            <div class="grid-bento">
+          <!-- Subtitle + CTA + Stats BELOW -->
+          <div class="hero-body">
+            <p class="hero-subtitle">
+              We architect high-performance data systems that eliminate manual
+              overhead and unlock hidden value in your technical infrastructure
+              — at enterprise scale.
+            </p>
 
-                <div class="bento-item bento-span-8">
-                    <div class="card-icon"><i data-lucide="database"></i></div>
-                    <h3>Massive Data Extraction</h3>
-                    <p>Resilient, distributed crawling systems handling millions of data points across protected web
-                        environments. Built with self-healing logic and anti-fingerprinting technology for zero
-                        downtime.</p>
-                    <a href="/services.html#web-scraping" class="card-link">Explore Pipelines <i
-                            data-lucide="arrow-right" style="width:16px;height:16px;"></i></a>
-                </div>
-
-                <div class="bento-item bento-span-4" style="background:var(--accent-subtle);">
-                    <div class="card-icon"><i data-lucide="flask-conical"></i></div>
-                    <h3>Chemical Intelligence</h3>
-                    <p>Specialized structural data management for Pharma and Chemical industries at supplier scale.</p>
-                    <a href="/chemical-data.html" class="btn btn-outline"
-                        style="margin-top:auto;width:100%;justify-content:center;">Deep Dive</a>
-                </div>
-
-                <div class="bento-item bento-span-4">
-                    <div class="card-icon"><i data-lucide="zap"></i></div>
-                    <h3>Technical Automation</h3>
-                    <p>Workflow redesign through Python and cloud orchestration — transforming manual processes into
-                        autonomous agents.</p>
-                    <a href="/services.html#python-automation" class="card-link">Learn More <i data-lucide="arrow-right"
-                            style="width:16px;height:16px;"></i></a>
-                </div>
-
-                <div class="bento-item bento-span-4">
-                    <div class="card-icon"><i data-lucide="table-2"></i></div>
-                    <h3>Excel Automation</h3>
-                    <p>Complex spreadsheet automation with macro engineering and real-time Power BI dashboard
-                        integration.</p>
-                    <a href="/services.html#excel-automation" class="card-link">Learn More <i data-lucide="arrow-right"
-                            style="width:16px;height:16px;"></i></a>
-                </div>
-
-                <div class="bento-item bento-span-12 bento-accent">
-                    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:2rem;">
-                        <div>
-                            <h3 style="font-size:1.75rem;margin-bottom:0.75rem;">Enterprise Ready?</h3>
-                            <p style="max-width:560px;">Our strategic partnerships with top-tier data and IT firms allow
-                                us to handle requests from single-tool automations to million-row data migrations.</p>
-                        </div>
-                        <a href="/strategic-partners.html" class="btn"
-                            style="background:rgba(255,255,255,0.15);color:#fff;border:1px solid rgba(255,255,255,0.3);white-space:nowrap;backdrop-filter:blur(10px);">
-                            Our Network <i data-lucide="arrow-up-right"></i>
-                        </a>
-                    </div>
-                </div>
-
+            <div class="hero-cta">
+              <a href="/contact.html" class="btn btn-primary">
+                Start a Project <i data-lucide="zap"></i>
+              </a>
+              <a href="/services.html" class="btn btn-secondary">
+                View Services <i data-lucide="arrow-right"></i>
+              </a>
             </div>
-        </section>
 
-        <!-- ── TRUST STATS ─────────────────────────────────── -->
-        <section class="trust-bar">
-            <div class="container">
-                <div class="trust-bar-inner">
-                    <div class="trust-stat">
-                        <span class="number" data-count="100" data-suffix="K+">0</span>
-                        <span class="label">Records / Day</span>
-                    </div>
-                    <div class="trust-divider"></div>
-                    <div class="trust-stat">
-                        <span class="number" data-count="99" data-suffix="%">0</span>
-                        <span class="label">Data Accuracy</span>
-                    </div>
-                    <div class="trust-divider"></div>
-                    <div class="trust-stat">
-                        <span class="number" data-count="50" data-suffix="+">0</span>
-                        <span class="label">Projects Done</span>
-                    </div>
-                    <div class="trust-divider"></div>
-                    <div class="trust-stat">
-                        <span class="number" data-count="24" data-suffix="hr">0</span>
-                        <span class="label">Avg. Response</span>
-                    </div>
-                    <div class="trust-divider"></div>
-                    <div class="trust-stat">
-                        <span class="number" data-count="10" data-suffix="+">0</span>
-                        <span class="label">Industries Served</span>
-                    </div>
-                </div>
+            <div class="hero-stats">
+              <div class="stat-item">
+                <span class="stat-number" data-count="100" data-suffix="K+"
+                  >0</span
+                >
+                <span class="stat-label">Records Processed Daily</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number" data-count="50" data-suffix="+"
+                  >0</span
+                >
+                <span class="stat-label">Projects Delivered</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number" data-count="5" data-suffix="★"
+                  >0</span
+                >
+                <span class="stat-label">Client Rating</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number" data-count="3" data-suffix=" Yrs"
+                  >0</span
+                >
+                <span class="stat-label">Enterprise Experience</span>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <!-- ── ENGINEERING PROCESS ─────────────────────────── -->
-        <section class="container">
-            <div style="text-align:center;">
-                <span class="section-label"><i data-lucide="cpu" style="width:14px;height:14px;"></i> How It
-                    Works</span>
-                <h2 class="section-title">The Engineering Process</h2>
-                <p class="section-subtitle" style="margin:0 auto 3.5rem;">
-                    A proven 3-phase framework that takes your data challenge from ambiguity to production in record
-                    time.
+      <!-- ── BENTO SERVICES ──────────────────────────────── -->
+      <section class="container" style="padding-top: 0">
+        <div class="grid-bento">
+          <div class="bento-item bento-span-8">
+            <div class="card-icon"><i data-lucide="database"></i></div>
+            <h3>Massive Data Extraction</h3>
+            <p>
+              Resilient, distributed crawling systems handling millions of data
+              points across protected web environments. Built with self-healing
+              logic and anti-fingerprinting technology for zero downtime.
+            </p>
+            <a href="/services.html#web-scraping" class="card-link"
+              >Explore Pipelines
+              <i data-lucide="arrow-right" style="width: 16px; height: 16px"></i
+            ></a>
+          </div>
+
+          <div
+            class="bento-item bento-span-4"
+            style="background: var(--accent-subtle)"
+          >
+            <div class="card-icon"><i data-lucide="flask-conical"></i></div>
+            <h3>Chemical Intelligence</h3>
+            <p>
+              Specialized structural data management for Pharma and Chemical
+              industries at supplier scale.
+            </p>
+            <a
+              href="/chemical-data.html"
+              class="btn btn-outline"
+              style="margin-top: auto; width: 100%; justify-content: center"
+              >Deep Dive</a
+            >
+          </div>
+
+          <div class="bento-item bento-span-4">
+            <div class="card-icon"><i data-lucide="zap"></i></div>
+            <h3>Technical Automation</h3>
+            <p>
+              Workflow redesign through Python and cloud orchestration —
+              transforming manual processes into autonomous agents.
+            </p>
+            <a href="/services.html#python-automation" class="card-link"
+              >Learn More
+              <i data-lucide="arrow-right" style="width: 16px; height: 16px"></i
+            ></a>
+          </div>
+
+          <div class="bento-item bento-span-4">
+            <div class="card-icon"><i data-lucide="table-2"></i></div>
+            <h3>Excel Automation</h3>
+            <p>
+              Complex spreadsheet automation with macro engineering and
+              real-time Power BI dashboard integration.
+            </p>
+            <a href="/services.html#excel-automation" class="card-link"
+              >Learn More
+              <i data-lucide="arrow-right" style="width: 16px; height: 16px"></i
+            ></a>
+          </div>
+
+          <div class="bento-item bento-span-12 bento-accent">
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 2rem;
+              "
+            >
+              <div>
+                <h3 style="font-size: 1.75rem; margin-bottom: 0.75rem">
+                  Enterprise Ready?
+                </h3>
+                <p style="max-width: 560px">
+                  Our strategic partnerships with top-tier data and IT firms
+                  allow us to handle requests from single-tool automations to
+                  million-row data migrations.
                 </p>
+              </div>
+              <a
+                href="/strategic-partners.html"
+                class="btn"
+                style="
+                  background: rgba(255, 255, 255, 0.15);
+                  color: #fff;
+                  border: 1px solid rgba(255, 255, 255, 0.3);
+                  white-space: nowrap;
+                  backdrop-filter: blur(10px);
+                "
+              >
+                Our Network <i data-lucide="arrow-up-right"></i>
+              </a>
             </div>
+          </div>
+        </div>
+      </section>
 
-            <div class="process-grid">
-                <div class="process-step">
-                    <h3>Auditing &amp; Spec</h3>
-                    <p>Deep-dive audit of your current data silos and manual workflows to identify critical bottlenecks
-                        and define precise engineering requirements.</p>
-                </div>
-                <div class="process-step">
-                    <h3>Architecture Design</h3>
-                    <p>Custom, scalable blueprint using high-performance stacks — async Python, cloud orchestration, or
-                        Rust — tailored to your exact throughput demands.</p>
-                </div>
-                <div class="process-step">
-                    <h3>Deployment &amp; QA</h3>
-                    <p>Sub-millisecond latency monitoring and automated QA cycles ensure flawless data flowing into your
-                        business — 24/7 reliability guaranteed.</p>
-                </div>
+      <!-- ── TRUST STATS ─────────────────────────────────── -->
+      <section class="trust-bar">
+        <div class="container">
+          <div class="trust-bar-inner">
+            <div class="trust-stat">
+              <span class="number" data-count="100" data-suffix="K+">0</span>
+              <span class="label">Records / Day</span>
             </div>
-        </section>
+            <div class="trust-divider"></div>
+            <div class="trust-stat">
+              <span class="number" data-count="99" data-suffix="%">0</span>
+              <span class="label">Data Accuracy</span>
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-stat">
+              <span class="number" data-count="50" data-suffix="+">0</span>
+              <span class="label">Projects Done</span>
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-stat">
+              <span class="number" data-count="24" data-suffix="hr">0</span>
+              <span class="label">Avg. Response</span>
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-stat">
+              <span class="number" data-count="10" data-suffix="+">0</span>
+              <span class="label">Industries Served</span>
+            </div>
+          </div>
+        </div>
+      </section>
 
+      <!-- ── ENGINEERING PROCESS ─────────────────────────── -->
+      <section class="container">
+        <div style="text-align: center">
+          <span class="section-label"
+            ><i data-lucide="cpu" style="width: 14px; height: 14px"></i> How It
+            Works</span
+          >
+          <h2 class="section-title">The Engineering Process</h2>
+          <p class="section-subtitle" style="margin: 0 auto 3.5rem">
+            A proven 3-phase framework that takes your data challenge from
+            ambiguity to production in record time.
+          </p>
+        </div>
+
+        <div class="process-grid">
+          <div class="process-step">
+            <h3>Auditing &amp; Spec</h3>
+            <p>
+              Deep-dive audit of your current data silos and manual workflows to
+              identify critical bottlenecks and define precise engineering
+              requirements.
+            </p>
+          </div>
+          <div class="process-step">
+            <h3>Architecture Design</h3>
+            <p>
+              Custom, scalable blueprint using high-performance stacks — async
+              Python, cloud orchestration, or Rust — tailored to your exact
+              throughput demands.
+            </p>
+          </div>
+          <div class="process-step">
+            <h3>Deployment &amp; QA</h3>
+            <p>
+              Sub-millisecond latency monitoring and automated QA cycles ensure
+              flawless data flowing into your business — 24/7 reliability
+              guaranteed.
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- ── FOOTER ────────────────────────────────────────────── -->
     <footer class="footer">
-        <!-- CTA Strip -->
-        <div class="footer-cta">
-            <div class="container">
-                <h3>Ready to scale your data operations?</h3>
-                <p>Let's discuss your project. Response within 24 hours.</p>
-                <a href="/contact.html" class="btn btn-primary">Start a Conversation <i data-lucide="send"></i></a>
-            </div>
+      <!-- CTA Strip -->
+      <div class="footer-cta">
+        <div class="container">
+          <h3>Ready to scale your data operations?</h3>
+          <p>Let's discuss your project. Response within 24 hours.</p>
+          <a href="/contact.html" class="btn btn-primary"
+            >Start a Conversation <i data-lucide="send"></i
+          ></a>
         </div>
+      </div>
 
-        <!-- Main Footer -->
-        <div class="footer-inner">
-            <div class="container">
-                <div class="footer-grid">
-                    <div class="footer-brand">
-                        <h3>Ajay Shingadiya</h3>
-                        <p>Enterprise-grade data engineering &amp; automation. Precision. Speed. Scale. Built for the
-                            demands of modern business.</p>
-                        <div class="footer-badge">
-                            <span class="dot"></span>
-                            Available for Projects
-                        </div>
-                    </div>
-                    <div class="footer-links">
-                        <h4>Practice Areas</h4>
-                        <ul>
-                            <li><a href="/services.html#web-scraping">Web Scraping</a></li>
-                            <li><a href="/services.html#excel-automation">Excel Automation</a></li>
-                            <li><a href="/chemical-data.html">Chemical Data</a></li>
-                            <li><a href="/services.html#python-automation">Python Engineering</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-links">
-                        <h4>Company</h4>
-                        <ul>
-                            <li><a href="/index.html">Home</a></li>
-                            <li><a href="/strategic-partners.html">Partnership</a></li>
-                            <li><a href="/profile.html">Who I Am</a></li>
-                            <li><a href="/about.html">About</a></li>
-                            <li><a href="/contact.html">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-contact">
-                        <h4>Get In Touch</h4>
-                        <div><i data-lucide="mail"></i> <span>ajayshingadiya822@gmail.com</span></div>
-                        <div><i data-lucide="phone"></i> <span>+91 9313564576</span></div>
-                        <div><i data-lucide="map-pin"></i> <span>Ahmedabad, Gujarat, India</span></div>
-                    </div>
-                </div>
-                <div class="footer-bottom">
-                    <p>&copy; 2026 Ajay Shingadiya. Built for Performance.</p>
-                    <div class="social-links">
-                        <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
-                        <a href="#" aria-label="GitHub"><i data-lucide="github"></i></a>
-                        <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
-                    </div>
-                </div>
+      <!-- Main Footer -->
+      <div class="footer-inner">
+        <div class="container">
+          <div class="footer-grid">
+            <div class="footer-brand">
+              <h3>Ajay Shingadiya</h3>
+              <p>
+                Enterprise-grade data engineering &amp; automation. Precision.
+                Speed. Scale. Built for the demands of modern business.
+              </p>
+              <div class="footer-badge">
+                <span class="dot"></span>
+                Available for Projects
+              </div>
             </div>
+            <div class="footer-links">
+              <h4>Practice Areas</h4>
+              <ul>
+                <li><a href="/services.html#web-scraping">Web Scraping</a></li>
+                <li>
+                  <a href="/services.html#excel-automation">Excel Automation</a>
+                </li>
+                <li><a href="/chemical-data.html">Chemical Data</a></li>
+                <li>
+                  <a href="/services.html#python-automation"
+                    >Python Engineering</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="footer-links">
+              <h4>Company</h4>
+              <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/strategic-partners.html">Partnership</a></li>
+                <li><a href="/profile.html">Who I Am</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+              </ul>
+            </div>
+            <div class="footer-contact">
+              <h4>Get In Touch</h4>
+              <div>
+                <i data-lucide="mail"></i>
+                <span>ajayshingadiya822@gmail.com</span>
+              </div>
+              <div><i data-lucide="phone"></i> <span>+91 9313564576</span></div>
+              <div>
+                <i data-lucide="map-pin"></i>
+                <span>Ahmedabad, Gujarat, India</span>
+              </div>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <p>&copy; 2026 Ajay Shingadiya. Built for Performance.</p>
+            <div class="social-links">
+              <a href="#" aria-label="LinkedIn"
+                ><i data-lucide="linkedin"></i
+              ></a>
+              <a href="#" aria-label="GitHub"><i data-lucide="github"></i></a>
+              <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+            </div>
+          </div>
         </div>
+      </div>
     </footer>
 
     <script src="/main.js"></script>
-    <script>lucide.createIcons();</script>
-</body>
-
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
 </html>
