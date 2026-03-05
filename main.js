@@ -167,13 +167,23 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ── 6. TYPING EFFECT ─────────────────────────────────── */
     const typedEl = document.getElementById('typed-text');
     if (typedEl) {
-        const phrases = [
-            'Massive Data Extraction.',
-            'Intelligent Automation.',
-            'Chemical Intelligence.',
-            'Enterprise Scale.',
-            'Python Engineering.',
-        ];
+        // Read per-page phrases from data-phrases attribute, else use defaults
+        let phrases;
+        try {
+            const raw = typedEl.getAttribute('data-phrases');
+            phrases = raw ? JSON.parse(raw) : null;
+        } catch (e) { phrases = null; }
+
+        if (!phrases || !phrases.length) {
+            phrases = [
+                'Massive Data Extraction.',
+                'Intelligent Automation.',
+                'Chemical Intelligence.',
+                'Enterprise Scale.',
+                'Python Engineering.',
+            ];
+        }
+
         let pIdx = 0, cIdx = 0, deleting = false;
         const cursor = document.createElement('span');
         cursor.className = 'typed-cursor';

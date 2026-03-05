@@ -326,10 +326,29 @@ a {
     min-height: 88vh;
     display: flex;
     align-items: flex-start;
-    padding: 7rem 0 5rem;
+    padding: 6rem 0 4rem;
     position: relative;
     overflow: hidden;
     background: var(--grad-hero);
+}
+
+.hero .container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 70vh;
+    /* Give the container height so flex utility works */
+}
+
+.hero-head {
+    /* badge + title at the top */
+    margin-bottom: 2rem;
+}
+
+.hero-body {
+    /* subtitle + CTA + stats - pushed towards middle/bottom */
+    margin-top: auto;
+    padding-bottom: 2rem;
 }
 
 .hero-badge {
