@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* ── 1. THEME ─────────────────────────────────────────── */
     const initTheme = () => {
-        const saved = localStorage.getItem('theme') ||
-            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        // Always default to dark mode on first visit
+        const saved = localStorage.getItem('theme') || 'dark';
         document.documentElement.setAttribute('data-theme', saved);
         updateThemeIcon(saved);
     };
