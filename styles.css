@@ -67,7 +67,10 @@
     --text-secondary: #4a5568;
     --text-muted: #9ca3af;
 
-    --accent-subtle: rgba(99, 102, 241, 0.08);
+    --accent: #4f46e5;
+    --accent-2: #7e22ce;
+    --accent-hover: #4338ca;
+    --accent-subtle: rgba(79, 70, 229, 0.08);
     --border: rgba(0, 0, 0, 0.08);
     --border-accent: rgba(99, 102, 241, 0.3);
 
@@ -1283,11 +1286,6 @@ section {
     background: var(--bg-surface);
 }
 
-.form-group select option {
-    background: #0a0e1b;
-    color: #f0f2ff;
-}
-
 /* Force browser native dropdown to render in dark */
 .form-group select {
     color-scheme: dark;
@@ -1295,6 +1293,11 @@ section {
 
 [data-theme="light"] .form-group select {
     color-scheme: light;
+}
+
+.form-group select option {
+    background: var(--bg-base);
+    color: var(--text-primary);
 }
 
 .form-group textarea {
