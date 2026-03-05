@@ -826,8 +826,9 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5rem;
-    flex-wrap: wrap;
+    gap: 3rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
 }
 
 .trust-stat {
@@ -901,13 +902,12 @@ section {
     margin-top: 2rem;
 }
 
+/* Gradient line rendered as a block BEFORE CTA, not overlapping content */
 .footer::before {
     content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+    display: block;
     height: 2px;
+    width: 100%;
     background: linear-gradient(90deg, #6366f1, #a855f7, #06b6d4, #a855f7, #6366f1);
     background-size: 300% auto;
     animation: gradientSlide 5s linear infinite;
@@ -1211,10 +1211,25 @@ section {
     background: var(--bg-surface);
 }
 
+.form-group select option {
+    background: #0a0e1b;
+    color: #f0f2ff;
+}
+
+/* Force browser native dropdown to render in dark */
+.form-group select {
+    color-scheme: dark;
+}
+
+[data-theme="light"] .form-group select {
+    color-scheme: light;
+}
+
 .form-group textarea {
     resize: vertical;
     min-height: 140px;
 }
+
 
 /* ─── MOBILE RESPONSIVE ──────────────────────────────────── */
 @media (max-width: 1024px) {
