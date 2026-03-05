@@ -1,112 +1,108 @@
 ﻿<!doctype html>
 <html lang="en" data-theme="dark">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Senior Architect Profile - Engineering Excellence | Ajay Shingadiya
-    </title>
-    <link rel="stylesheet" href="/styles.css" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    Senior Architect Profile - Engineering Excellence | Ajay Shingadiya
+  </title>
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .profile-grid {
+      display: grid;
+      grid-template-columns: 350px 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .profile-card {
+      background: var(--bg-surface);
+      padding: 2.5rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .tech-pill {
+      background: var(--bg-subtle);
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .tech-pill.highlight {
+      background: var(--accent-subtle);
+      color: var(--accent);
+      border: 1px solid var(--accent);
+    }
+
+    @media (max-width: 968px) {
       .profile-grid {
-        display: grid;
-        grid-template-columns: 350px 1fr;
-        gap: 4rem;
-        align-items: start;
+        grid-template-columns: 1fr;
       }
+    }
+  </style>
+</head>
 
-      .profile-card {
-        background: var(--bg-surface);
-        padding: 2.5rem;
-        border-radius: var(--radius);
-        border: 1px solid var(--border);
-        text-align: center;
-      }
+<body>
+  <canvas id="particle-canvas"></canvas>
+  <header class="header">
+    <nav class="nav-container container">
+      <div class="logo">
+        <a href="/">Ajay Shingadiya</a>
+      </div>
+      <button class="menu-toggle" aria-label="Toggle navigation">
+        <i data-lucide="menu"></i>
+      </button>
+      <ul class="nav-menu">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/services.html">Services</a></li>
+        <li><a href="/strategic-partners.html">Partnership</a></li>
+        <li><a href="/chemical-data.html">Chemical Data</a></li>
+        <li><a href="/profile.html" class="active">Who I Am</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" aria-label="Toggle Theme">
+        <i data-lucide="sun"></i>
+      </button>
+    </nav>
+  </header>
 
-      .tech-stack {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.75rem;
-        margin-top: 1.5rem;
-      }
-
-      .tech-pill {
-        background: var(--bg-subtle);
-        padding: 0.5rem 1rem;
-        border-radius: 2rem;
-        font-size: 0.85rem;
-        font-weight: 600;
-        color: var(--text-primary);
-      }
-
-      .tech-pill.highlight {
-        background: var(--accent-subtle);
-        color: var(--accent);
-        border: 1px solid var(--accent);
-      }
-
-      @media (max-width: 968px) {
-        .profile-grid {
-          grid-template-columns: 1fr;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <canvas id="particle-canvas"></canvas>
-    <header class="header">
-      <nav class="nav-container container">
-        <div class="logo">
-          <a href="/">Ajay Shingadiya</a>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-head">
+          <h1 class="hero-title">
+            Core
+            <span class="highlight" id="typed-text"
+              data-phrases='["Data Engineer.", "Automation Expert.", "Python Specialist.", "Ajay Shingadiya."]'>Architect.</span>
+          </h1>
         </div>
-        <button class="menu-toggle" aria-label="Toggle navigation">
-          <i data-lucide="menu"></i>
-        </button>
-        <ul class="nav-menu">
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/services.html">Services</a></li>
-          <li><a href="/strategic-partners.html">Partnership</a></li>
-          <li><a href="/chemical-data.html">Chemical Data</a></li>
-          <li><a href="/profile.html" class="active">Who I Am</a></li>
-          <li><a href="/contact.html">Contact</a></li>
-        </ul>
-        <button class="theme-toggle" aria-label="Toggle Theme">
-          <i data-lucide="sun"></i>
-        </button>
-      </nav>
-    </header>
-
-    <main>
-      <section class="hero">
-        <div class="container">
-          <div class="hero-head">
-            <h1 class="hero-title">
-              Core
-              <span
-                class="highlight"
-                id="typed-text"
-                data-phrases='["Data Engineer.", "Automation Expert.", "Python Specialist.", "Ajay Shingadiya."]'
-                >Architect.</span
-              >
-            </h1>
-          </div>
-          <div class="hero-body">
-            <p class="hero-subtitle">
-              Senior Software Architect specializing in high-frequency data
-              extraction and intelligent workflow automation.
-            </p>
-          </div>
+        <div class="hero-body">
+          <p class="hero-subtitle">
+            Senior Software Architect specializing in high-frequency data
+            extraction and intelligent workflow automation.
+          </p>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="container">
-        <div class="profile-grid">
-          <aside class="profile-card">
-            <div
-              style="
+    <section class="container">
+      <div class="profile-grid">
+        <aside class="profile-card">
+          <div style="
                 width: 200px;
                 height: 200px;
                 background: var(--bg-subtle);
@@ -116,189 +112,167 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-              "
-            >
-              <i
-                data-lucide="shield-check"
-                style="
+              ">
+            <i data-lucide="shield-check" style="
                   width: 80px;
                   height: 80px;
                   color: var(--accent);
                   opacity: 0.2;
-                "
-              ></i>
-            </div>
-            <h2 style="margin-bottom: 0.5rem">Ajay Shingadiya</h2>
-            <p style="color: var(--text-secondary); margin-bottom: 2rem">
-              Senior Automation Architect
-            </p>
+                "></i>
+          </div>
+          <h2 style="margin-bottom: 0.5rem">Ajay Shingadiya</h2>
+          <p style="color: var(--text-secondary); margin-bottom: 2rem">
+            Senior Automation Architect
+          </p>
 
-            <div
-              class="footer-contact"
-              style="
+          <div class="page-contact-info" style="
                 text-align: left;
                 padding: 1.5rem 0;
                 border-top: 1px solid var(--border);
-              "
-            >
-              <div>
-                <i data-lucide="mail"></i>
-                <span>ajayshingadiya822@gmail.com</span>
-              </div>
-              <div>
-                <i data-lucide="map-pin"></i> <span>Gujarat, India</span>
-              </div>
+              ">
+            <div>
+              <i data-lucide="mail"></i>
+              <span>ajayshingadiya822@gmail.com</span>
             </div>
+            <div>
+              <i data-lucide="map-pin"></i> <span>Gujarat, India</span>
+            </div>
+          </div>
 
-            <a href="/contact.html" class="btn btn-primary" style="width: 100%"
-              >Hire for Enterprise</a
-            >
-          </aside>
+          <a href="/contact.html" class="btn btn-primary" style="width: 100%">Hire for Enterprise</a>
+        </aside>
 
-          <div class="profile-bio">
-            <h2 style="font-size: 2.5rem; margin-bottom: 2rem">
-              Professional Excellence
-            </h2>
-            <p
-              style="
+        <div class="profile-bio">
+          <h2 style="font-size: 2.5rem; margin-bottom: 2rem">
+            Professional Excellence
+          </h2>
+          <p style="
                 font-size: 1.1rem;
                 color: var(--text-secondary);
                 margin-bottom: 2rem;
                 line-height: 1.8;
-              "
-            >
-              With over 12 years of experience in the data space, I've seen the
-              evolution of web architecture from simple HTML5 blocks to the
-              complex, JavaScript-heavy dynamic ecosystems of today. My
-              specialty lies in the "Shadow Infrastructure"—the
-              behind-the-scenes systems that power the world's most data-reliant
-              companies.
-            </p>
+              ">
+            With over 12 years of experience in the data space, I've seen the
+            evolution of web architecture from simple HTML5 blocks to the
+            complex, JavaScript-heavy dynamic ecosystems of today. My
+            specialty lies in the "Shadow Infrastructure"—the
+            behind-the-scenes systems that power the world's most data-reliant
+            companies.
+          </p>
 
-            <h3 style="margin: 3rem 0 1.5rem">The Engineering Stack</h3>
-            <div class="tech-stack">
-              <span class="tech-pill highlight">Rust (Compute Optim.) 🦀</span>
-              <span class="tech-pill highlight">Asynchronous Python 🐍</span>
-              <span class="tech-pill">Playwright / Selenium</span>
-              <span class="tech-pill">Docker & Kubernetes</span>
-              <span class="tech-pill">PostgreSQL & Redis</span>
-              <span class="tech-pill">AWS Lambda / S3</span>
-              <span class="tech-pill">CI/CD (GitHub Actions)</span>
-              <span class="tech-pill">API Gateway Mgmt</span>
-              <span class="tech-pill">Machine Learning (Classification)</span>
-            </div>
-
-            <h3 style="margin: 3rem 0 1.5rem">Strategic Advantage</h3>
-            <div class="grid-bento">
-              <div
-                class="bento-item bento-span-12"
-                style="background: var(--bg-subtle)"
-              >
-                <h4>Direct Communication</h4>
-                <p style="font-size: 0.95rem">
-                  You work directly with the architect. No middle-management, no
-                  communication decay. Every architectural decision is explained
-                  and justified.
-                </p>
-              </div>
-              <div
-                class="bento-item bento-span-12"
-                style="background: var(--bg-subtle)"
-              >
-                <h4>Scalability by Design</h4>
-                <p style="font-size: 0.95rem">
-                  Our systems are built to handle structural shifts and load
-                  spikes automatically. We don't build "fixes"—we build
-                  "solutions" that last for years.
-                </p>
-              </div>
-            </div>
+          <h3 style="margin: 3rem 0 1.5rem">The Engineering Stack</h3>
+          <div class="tech-stack">
+            <span class="tech-pill highlight">Rust (Compute Optim.) 🦀</span>
+            <span class="tech-pill highlight">Asynchronous Python 🐍</span>
+            <span class="tech-pill">Playwright / Selenium</span>
+            <span class="tech-pill">Docker & Kubernetes</span>
+            <span class="tech-pill">PostgreSQL & Redis</span>
+            <span class="tech-pill">AWS Lambda / S3</span>
+            <span class="tech-pill">CI/CD (GitHub Actions)</span>
+            <span class="tech-pill">API Gateway Mgmt</span>
+            <span class="tech-pill">Machine Learning (Classification)</span>
           </div>
-        </div>
-      </section>
-    </main>
 
-    <footer class="footer">
-      <!-- CTA Strip -->
-      <div class="footer-cta">
-        <div class="container">
-          <h3>Ready to scale your data operations?</h3>
-          <p>Let's discuss your project. Response within 24 hours.</p>
-          <a href="/contact.html" class="btn btn-primary"
-            >Start a Conversation <i data-lucide="send"></i
-          ></a>
-        </div>
-      </div>
-      <!-- Main Footer -->
-      <div class="footer-inner">
-        <div class="container">
-          <div class="footer-grid">
-            <div class="footer-brand">
-              <h3>Ajay Shingadiya</h3>
-              <p>
-                Enterprise-grade data engineering &amp; automation. Precision.
-                Speed. Scale.
+          <h3 style="margin: 3rem 0 1.5rem">Strategic Advantage</h3>
+          <div class="grid-bento">
+            <div class="bento-item bento-span-12" style="background: var(--bg-subtle)">
+              <h4>Direct Communication</h4>
+              <p style="font-size: 0.95rem">
+                You work directly with the architect. No middle-management, no
+                communication decay. Every architectural decision is explained
+                and justified.
               </p>
-              <div class="footer-badge">
-                <span class="dot"></span>
-                Available for Projects
-              </div>
             </div>
-            <div class="footer-links">
-              <h4>Practice Areas</h4>
-              <ul>
-                <li><a href="/services.html#web-scraping">Web Scraping</a></li>
-                <li>
-                  <a href="/services.html#excel-automation">Excel Automation</a>
-                </li>
-                <li><a href="/chemical-data.html">Chemical Data</a></li>
-                <li>
-                  <a href="/services.html#python-automation"
-                    >Python Engineering</a
-                  >
-                </li>
-              </ul>
-            </div>
-            <div class="footer-links">
-              <h4>Company</h4>
-              <ul>
-                <li><a href="/index.html">Home</a></li>
-                <li><a href="/strategic-partners.html">Partnership</a></li>
-                <li><a href="/profile.html">Who I Am</a></li>
-                <li><a href="/about.html">About</a></li>
-                <li><a href="/contact.html">Contact</a></li>
-              </ul>
-            </div>
-            <div class="footer-contact">
-              <h4>Get In Touch</h4>
-              <div>
-                <i data-lucide="mail"></i>
-                <span>ajayshingadiya822@gmail.com</span>
-              </div>
-              <div><i data-lucide="phone"></i> <span>+91 9313564576</span></div>
-              <div>
-                <i data-lucide="map-pin"></i>
-                <span>Ahmedabad, Gujarat, India</span>
-              </div>
-            </div>
-          </div>
-          <div class="footer-bottom">
-            <p>&copy; 2026 Ajay Shingadiya. Built for Performance.</p>
-            <div class="social-links">
-              <a href="#" aria-label="LinkedIn"
-                ><i data-lucide="linkedin"></i
-              ></a>
-              <a href="#" aria-label="GitHub"><i data-lucide="github"></i></a>
-              <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+            <div class="bento-item bento-span-12" style="background: var(--bg-subtle)">
+              <h4>Scalability by Design</h4>
+              <p style="font-size: 0.95rem">
+                Our systems are built to handle structural shifts and load
+                spikes automatically. We don't build "fixes"—we build
+                "solutions" that last for years.
+              </p>
             </div>
           </div>
         </div>
       </div>
-    </footer>
+    </section>
+  </main>
 
-    <script src="/main.js"></script>
-    <script>
-      lucide.createIcons();
-    </script>
-  </body>
+  <footer class="footer">
+    <!-- CTA Strip -->
+    <div class="footer-cta">
+      <div class="container">
+        <h3>Ready to scale your data operations?</h3>
+        <p>Let's discuss your project. Response within 24 hours.</p>
+        <a href="/contact.html" class="btn btn-primary">Start a Conversation <i data-lucide="send"></i></a>
+      </div>
+    </div>
+    <!-- Main Footer -->
+    <div class="footer-inner">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <h3>Ajay Shingadiya</h3>
+            <p>
+              Enterprise-grade data engineering &amp; automation. Precision.
+              Speed. Scale.
+            </p>
+            <div class="footer-badge">
+              <span class="dot"></span>
+              Available for Projects
+            </div>
+          </div>
+          <div class="footer-links">
+            <h4>Practice Areas</h4>
+            <ul>
+              <li><a href="/services.html#web-scraping">Web Scraping</a></li>
+              <li>
+                <a href="/services.html#excel-automation">Excel Automation</a>
+              </li>
+              <li><a href="/chemical-data.html">Chemical Data</a></li>
+              <li>
+                <a href="/services.html#python-automation">Python Engineering</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-links">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="/index.html">Home</a></li>
+              <li><a href="/strategic-partners.html">Partnership</a></li>
+              <li><a href="/profile.html">Who I Am</a></li>
+              <li><a href="/about.html">About</a></li>
+              <li><a href="/contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-contact">
+            <h4>Get In Touch</h4>
+            <div>
+              <i data-lucide="mail"></i>
+              <span>ajayshingadiya822@gmail.com</span>
+            </div>
+            <div><i data-lucide="phone"></i> <span>+91 9313564576</span></div>
+            <div>
+              <i data-lucide="map-pin"></i>
+              <span>Ahmedabad, Gujarat, India</span>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 Ajay Shingadiya. Built for Performance.</p>
+          <div class="social-links">
+            <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+            <a href="#" aria-label="GitHub"><i data-lucide="github"></i></a>
+            <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/main.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+
 </html>
