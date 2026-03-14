@@ -5,6 +5,23 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
 export default function AboutPage() {
+  // Common Reveal Observer
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    );
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   // Typing effect
   useEffect(() => {
     const el = document.getElementById('typed-text');
@@ -49,7 +66,7 @@ export default function AboutPage() {
   return (
     <>
       <section className="hero">
-        <div className="container">
+        <div className="container reveal">
           <div className="hero-head">
             <h1 className="hero-title">
               Operational{' '}
@@ -74,7 +91,7 @@ export default function AboutPage() {
 
       <section className="container">
         <div className="grid-bento">
-          <div className="bento-item bento-span-8">
+          <div className="bento-item bento-span-8 reveal">
             <h2 style={{ marginBottom: '2rem' }}>Our Engineering Philosophy</h2>
             <p
               style={{
@@ -103,7 +120,7 @@ export default function AboutPage() {
           </div>
 
           <div
-            className="bento-item bento-span-4"
+            className="bento-item bento-span-4 reveal reveal-delay-1"
             style={{ background: 'var(--bg-surface)', textAlign: 'center' }}
           >
             <div

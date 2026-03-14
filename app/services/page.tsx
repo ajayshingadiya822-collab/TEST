@@ -5,6 +5,23 @@ import Link from 'next/link';
 import { ArrowRight, Check, ShieldCheck, RefreshCw, Database } from 'lucide-react';
 
 export default function ServicesPage() {
+  // Common Reveal Observer
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    );
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   // Typing effect
   useEffect(() => {
     const el = document.getElementById('typed-text');
@@ -49,7 +66,7 @@ export default function ServicesPage() {
   return (
     <>
       <section className="hero">
-        <div className="container">
+        <div className="container reveal">
           <div className="hero-head">
             <h1 className="hero-title">
               Technical{' '}
@@ -75,7 +92,7 @@ export default function ServicesPage() {
       {/* Detailed Services */}
       <section className="container" style={{ paddingTop: 0, paddingBottom: '3rem' }}>
         <div className="grid-bento">
-          <div className="bento-item bento-span-12" id="web-scraping">
+          <div className="bento-item bento-span-12 reveal" id="web-scraping">
             <h2>01. Advanced Web Extraction</h2>
             <p
               style={{
@@ -127,7 +144,7 @@ export default function ServicesPage() {
             </div>
           </div>
 
-          <div className="bento-item bento-span-6" id="python-automation">
+          <div className="bento-item bento-span-6 reveal reveal-delay-1" id="python-automation">
             <h3>02. Process Automation</h3>
             <p style={{ color: 'var(--text-secondary)' }}>
               Redesigning legacy manual workflows into high-speed digital processes. We
@@ -147,7 +164,7 @@ export default function ServicesPage() {
           </div>
 
           <div
-            className="bento-item bento-span-6"
+            className="bento-item bento-span-6 reveal reveal-delay-2"
             id="excel-automation"
             style={{ background: 'var(--bg-subtle)' }}
           >

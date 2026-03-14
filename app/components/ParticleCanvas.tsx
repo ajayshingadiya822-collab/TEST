@@ -55,10 +55,11 @@ export default function ParticleCanvas() {
     resize();
     window.addEventListener('resize', resize, { passive: true });
 
-    const COUNT = Math.min(180, Math.floor((window.innerWidth * window.innerHeight) / 7000));
+    // REDUCED COUNT FOR BETTER PERFORMANCE
+    const COUNT = Math.min(80, Math.floor((window.innerWidth * window.innerHeight) / 15000));
     for (let i = 0; i < COUNT; i++) particles.push(new Particle());
 
-    const MAX_DIST = 120;
+    const MAX_DIST = 100; // Reduced distance for faster calculation
     const drawLines = () => {
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {

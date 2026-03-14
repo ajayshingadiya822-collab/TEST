@@ -256,6 +256,11 @@ a {
     background: var(--accent-subtle);
 }
 
+.nav-menu a:active {
+    transform: scale(0.95);
+    opacity: 0.8;
+}
+
 .nav-menu a:hover::after,
 .nav-menu a.active::after {
     width: 60%;

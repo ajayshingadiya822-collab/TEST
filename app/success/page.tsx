@@ -5,6 +5,23 @@ import Link from 'next/link';
 import { CheckCircle } from 'lucide-react';
 
 export default function SuccessPage() {
+  // Common Reveal Observer
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    );
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   // Typing effect
   useEffect(() => {
     const el = document.getElementById('typed-text');
@@ -47,7 +64,7 @@ export default function SuccessPage() {
   }, []);
 
   return (
-    <div className="container" style={{ minHeight: '80vh', display: 'flex' }}>
+    <div className="container reveal" style={{ minHeight: '80vh', display: 'flex' }}>
       <div className="success-container" style={{ margin: 'auto' }}>
         <div className="success-icon">
           <CheckCircle style={{ width: '48px', height: '48px' }} />

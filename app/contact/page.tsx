@@ -4,6 +4,23 @@ import { useEffect } from 'react';
 import { Mail, Briefcase, Phone, MapPin } from 'lucide-react';
 
 export default function ContactPage() {
+  // Common Reveal Observer
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    );
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   // Typing effect
   useEffect(() => {
     const el = document.getElementById('typed-text');
@@ -48,7 +65,7 @@ export default function ContactPage() {
   return (
     <>
       <section className="hero">
-        <div className="container">
+        <div className="container reveal">
           <div className="hero-head">
             <h1 className="hero-title">
               Initiate{' '}
@@ -73,7 +90,7 @@ export default function ContactPage() {
 
       <section className="container" style={{ paddingBottom: '4rem' }}>
         <div className="contact-grid">
-          <div className="contact-info">
+          <div className="contact-info reveal reveal-delay-1">
             <h2 style={{ marginBottom: '2.5rem' }}>Corporate Access</h2>
             <div className="page-contact-info">
               <div style={{ marginBottom: '2.5rem' }}>
@@ -94,7 +111,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className="form-card">
+          <div className="form-card reveal reveal-delay-2">
             <form action="https://formsubmit.co/ajayshingadiya822@gmail.com" method="POST" id="contact-form">
               {/* FormSubmit Configuration */}
               <input type="hidden" name="_subject" value="New Project Brief - Ajay Shingadiya" />

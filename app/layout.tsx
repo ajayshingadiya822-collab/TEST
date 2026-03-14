@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import NextTopLoader from 'nextjs-toploader';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ParticleCanvas from './components/ParticleCanvas';
-import ScrollRevealManager from './components/ScrollRevealManager';
+import BackgroundPrefetcher from './components/BackgroundPrefetcher';
 
 export const metadata: Metadata = {
   title: 'Ajay Shingadiya | Enterprise Data Engineering & Automation',
@@ -45,8 +46,19 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <NextTopLoader
+          color="var(--accent)"
+          initialPosition={0.08}
+          crawlSpeed={200}
+          height={3}
+          crawl={true}
+          showSpinner={false}
+          easing="ease"
+          speed={200}
+          shadow="0 0 10px var(--accent),0 0 5px var(--accent)"
+        />
         <ParticleCanvas />
-        <ScrollRevealManager />
+        <BackgroundPrefetcher />
         <Navbar />
         <main>{children}</main>
         <Footer />

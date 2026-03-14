@@ -5,6 +5,23 @@ import Link from 'next/link';
 import { Check, Beaker } from 'lucide-react';
 
 export default function ChemicalDataPage() {
+  // Common Reveal Observer
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    );
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   // Typing effect
   useEffect(() => {
     const el = document.getElementById('typed-text');
@@ -49,7 +66,7 @@ export default function ChemicalDataPage() {
   return (
     <>
       <section className="hero">
-        <div className="container">
+        <div className="container reveal">
           <div className="hero-head">
             <h1 className="hero-title">
               Engineered for{' '}
@@ -74,7 +91,7 @@ export default function ChemicalDataPage() {
 
       <section className="container" style={{ paddingTop: 0, paddingBottom: '3rem' }}>
         <div className="grid-bento">
-          <div className="bento-item bento-span-8">
+          <div className="bento-item bento-span-8 reveal">
             <h3>Catalog Automation</h3>
             <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem' }}>
               Maintaining massive chemical databases with 100% precision in
@@ -119,7 +136,7 @@ export default function ChemicalDataPage() {
           </div>
 
           <div
-            className="bento-item bento-span-4"
+            className="bento-item bento-span-4 reveal reveal-delay-1"
             style={{ background: 'var(--bg-subtle)' }}
           >
             <div className="card-icon">
@@ -132,7 +149,7 @@ export default function ChemicalDataPage() {
             </p>
           </div>
 
-          <div className="bento-item bento-span-4">
+          <div className="bento-item bento-span-4 reveal reveal-delay-1">
             <h3>Price Intel</h3>
             <p style={{ fontSize: '0.85rem' }}>
               Real-time tracking of compound pricing and availability trends.
@@ -140,7 +157,7 @@ export default function ChemicalDataPage() {
           </div>
 
           <div
-            className="bento-item bento-span-8"
+            className="bento-item bento-span-8 reveal reveal-delay-2"
             style={{ background: 'var(--bg-surface)' }}
           >
             <h3>Supplier-Scale Performance</h3>
@@ -155,7 +172,7 @@ export default function ChemicalDataPage() {
 
       <section className="container" style={{ paddingTop: '2rem', paddingBottom: '8rem' }}>
         <div
-          className="card"
+          className="card reveal"
           style={{ textAlign: 'center', border: '1px solid var(--border)' }}
         >
           <h2 style={{ marginBottom: '2rem' }}>Specific Domain Requirements?</h2>

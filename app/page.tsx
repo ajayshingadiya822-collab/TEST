@@ -14,37 +14,49 @@ import {
 } from 'lucide-react';
 
 export default function Home() {
-  // Wait before animating numbers via JS (since CSS covers the fadeSlideDown)
+  // Scroll Reveal + Number Counter Logic
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const el = entry.target as HTMLElement;
-            const countTo = parseInt(el.getAttribute('data-count') || '0', 10);
-            const suffix = el.getAttribute('data-suffix') || '';
+            
+            // 1) Handle Scroll Reveal
+            if (el.classList.contains('reveal')) {
+              el.classList.add('visible');
+            }
 
-            // simple counter animation
-            let current = 0;
-            const step = Math.ceil(countTo / 20);
-            const timer = setInterval(() => {
-              current += step;
-              if (current >= countTo) {
-                current = countTo;
-                clearInterval(timer);
-              }
-              el.innerText = current + suffix;
-            }, 50);
+            // 2) Handle Number Counter
+            if (el.classList.contains('stat-number') || el.classList.contains('number')) {
+              const countTo = parseInt(el.getAttribute('data-count') || '0', 10);
+              const suffix = el.getAttribute('data-suffix') || '';
+              let current = 0;
+              const duration = 1500;
+              const frameRate = 1000 / 60;
+              const totalFrames = duration / frameRate;
+              const increment = countTo / totalFrames;
+
+              const timer = setInterval(() => {
+                current += increment;
+                if (current >= countTo) {
+                  current = countTo;
+                  clearInterval(timer);
+                }
+                el.innerText = Math.floor(current) + suffix;
+              }, frameRate);
+            }
 
             observer.unobserve(el);
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
     );
 
-    document.querySelectorAll('.stat-number, .number').forEach((num) => {
-      observer.observe(num);
+    // Observe all numbers and reveal elements
+    document.querySelectorAll('.stat-number, .number, .reveal').forEach((el) => {
+      observer.observe(el);
     });
 
     return () => observer.disconnect();
@@ -167,9 +179,9 @@ export default function Home() {
       </section>
 
       {/* ── BENTO SERVICES ──────────────────────────────── */}
-      <section className="container" style={{ paddingTop: 0 }}>
+      <section className="container reveal" style={{ paddingTop: 0 }}>
         <div className="grid-bento">
-          <div className="bento-item bento-span-8">
+          <div className="bento-item bento-span-8 reveal">
             <div className="card-icon">
               <Database />
             </div>
@@ -186,7 +198,7 @@ export default function Home() {
           </div>
 
           <div
-            className="bento-item bento-span-4"
+            className="bento-item bento-span-4 reveal reveal-delay-1"
             style={{ background: 'var(--accent-subtle)' }}
           >
             <div className="card-icon">
@@ -206,7 +218,7 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="bento-item bento-span-4">
+          <div className="bento-item bento-span-4 reveal reveal-delay-2">
             <div className="card-icon">
               <Zap />
             </div>
@@ -221,7 +233,7 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="bento-item bento-span-4">
+          <div className="bento-item bento-span-4 reveal reveal-delay-3">
             <div className="card-icon">
               <Table2 />
             </div>
@@ -236,7 +248,7 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="bento-item bento-span-12 bento-accent">
+          <div className="bento-item bento-span-12 bento-accent reveal">
             <div
               style={{
                 display: 'flex',
@@ -278,35 +290,35 @@ export default function Home() {
       <section className="trust-bar">
         <div className="container">
           <div className="trust-bar-inner">
-            <div className="trust-stat">
+            <div className="trust-stat reveal reveal-delay-1">
               <span className="number" data-count="100" data-suffix="K+">
                 0
               </span>
               <span className="label">Records / Day</span>
             </div>
             <div className="trust-divider"></div>
-            <div className="trust-stat">
+            <div className="trust-stat reveal reveal-delay-2">
               <span className="number" data-count="99" data-suffix="%">
                 0
               </span>
               <span className="label">Data Accuracy</span>
             </div>
             <div className="trust-divider"></div>
-            <div className="trust-stat">
+            <div className="trust-stat reveal reveal-delay-3">
               <span className="number" data-count="50" data-suffix="+">
                 0
               </span>
               <span className="label">Projects Done</span>
             </div>
             <div className="trust-divider"></div>
-            <div className="trust-stat">
+            <div className="trust-stat reveal">
               <span className="number" data-count="24" data-suffix="hr">
                 0
               </span>
               <span className="label">Avg. Response</span>
             </div>
             <div className="trust-divider"></div>
-            <div className="trust-stat">
+            <div className="trust-stat reveal reveal-delay-1">
               <span className="number" data-count="10" data-suffix="+">
                 0
               </span>
@@ -319,32 +331,32 @@ export default function Home() {
       {/* ── ENGINEERING PROCESS ─────────────────────────── */}
       <section className="container">
         <div style={{ textAlign: 'center' }}>
-          <span className="section-label">
+          <span className="section-label reveal reveal-delay-2">
             <Cpu style={{ width: '14px', height: '14px' }} /> How It Works
           </span>
-          <h2 className="section-title">The Engineering Process</h2>
-          <p className="section-subtitle" style={{ margin: '0 auto 3.5rem' }}>
+          <h2 className="section-title reveal reveal-delay-3">The Engineering Process</h2>
+          <p className="section-subtitle reveal" style={{ margin: '0 auto 3.5rem' }}>
             A proven 3-phase framework that takes your data challenge from ambiguity to
             production in record time.
           </p>
         </div>
 
         <div className="process-grid">
-          <div className="process-step">
+          <div className="process-step reveal reveal-delay-1">
             <h3>Auditing &amp; Spec</h3>
             <p>
               Deep-dive audit of your current data silos and manual workflows to
               identify critical bottlenecks and define precise engineering requirements.
             </p>
           </div>
-          <div className="process-step">
+          <div className="process-step reveal reveal-delay-2">
             <h3>Architecture Design</h3>
             <p>
               Custom, scalable blueprint using high-performance stacks — async Python,
               cloud orchestration, or Rust — tailored to your exact throughput demands.
             </p>
           </div>
-          <div className="process-step">
+          <div className="process-step reveal reveal-delay-3">
             <h3>Deployment &amp; QA</h3>
             <p>
               Sub-millisecond latency monitoring and automated QA cycles ensure

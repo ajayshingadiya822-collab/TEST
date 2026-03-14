@@ -16,6 +16,23 @@ import {
 } from 'lucide-react';
 
 export default function StrategicPartnersPage() {
+  // Common Reveal Observer
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    );
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   // Typing effect
   useEffect(() => {
     const el = document.getElementById('typed-text');
@@ -60,7 +77,7 @@ export default function StrategicPartnersPage() {
   return (
     <>
       <section className="hero">
-        <div className="container">
+        <div className="container reveal">
           <div className="hero-head">
             <h1 className="hero-title">
               Strategic{' '}
@@ -87,7 +104,7 @@ export default function StrategicPartnersPage() {
         <div className="grid-bento">
           {/* Data Entry Partner */}
           <div
-            className="bento-item bento-span-12"
+            className="bento-item bento-span-12 reveal"
             style={{ borderLeft: '6px solid var(--accent)' }}
           >
             <span className="partner-badge">Data Processing Partner</span>
@@ -144,7 +161,7 @@ export default function StrategicPartnersPage() {
 
           {/* IT/Software Partner */}
           <div
-            className="bento-item bento-span-12"
+            className="bento-item bento-span-12 reveal reveal-delay-2"
             style={{ borderLeft: '6px solid var(--accent)' }}
           >
             <span className="partner-badge">Software Engineering Partner</span>
@@ -196,7 +213,7 @@ export default function StrategicPartnersPage() {
 
       <section className="container" style={{ paddingTop: '1rem', paddingBottom: '3rem' }}>
         <div
-          className="bento-item"
+          className="bento-item reveal"
           style={{ textAlign: 'center', border: '1px dashed var(--border)' }}
         >
           <Building2
