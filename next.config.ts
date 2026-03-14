@@ -2,8 +2,7 @@ import type { NextConfig } from "next";
 
 /** @type {import('next').NextConfig} */
 const nextConfig: NextConfig = {
-  output: 'export',  // static export for Vercel
-  trailingSlash: true,
+  /* standard Next.js config for Vercel */
   images: { unoptimized: true },
 };
 
