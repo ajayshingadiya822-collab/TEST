@@ -69,12 +69,14 @@ export default function ContactPage() {
           <div className="hero-head">
             <h1 className="hero-title">
               Initiate{' '}
-              <span
-                className="highlight"
-                id="typed-text"
-                data-phrases='["Initiate Project.", "Start Your Journey.", "Scale With Data.", "Build With Us."]'
-              >
-                Project.
+              <span className="typewriter-wrapper" style={{ display: 'inline-block' }}>
+                <span
+                  className="highlight"
+                  id="typed-text"
+                  data-phrases='["Initiate Project.", "Start Your Journey.", "Scale With Data.", "Build With Us."]'
+                >
+                  Project.
+                </span>
               </span>
               <span className="typed-cursor"></span>
             </h1>
@@ -95,11 +97,9 @@ export default function ContactPage() {
             <div className="page-contact-info">
               <div style={{ marginBottom: '2.5rem' }}>
                 <Mail />
-                <span>ajayshingadiya822@gmail.com</span>
-              </div>
-              <div style={{ marginBottom: '2.5rem' }}>
-                <Briefcase />
-                <span>ajayshingadiya822@gmail.com</span>
+                <a href="mailto:ajayshingadiya822@gmail.com" style={{ textDecoration: 'none', color: 'inherit' }}>
+                  ajayshingadiya822@gmail.com
+                </a>
               </div>
               <div style={{ marginBottom: '2.5rem' }}>
                 <Phone /> <span>+91 9313564576</span>

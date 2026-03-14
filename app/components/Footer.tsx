@@ -3,20 +3,19 @@ import { Mail, Phone, MapPin, Linkedin, Facebook, Instagram, Twitter, Send } fro
 
 export default function Footer() {
   return (
-    <footer className="footer">
-      {/* CTA Strip */}
-      <div className="footer-cta">
-        <div className="container">
-          <h3>Ready to scale your data operations?</h3>
-          <p>Let's discuss your project. Response within 24 hours.</p>
-          <Link href="/contact" className="btn btn-primary">
-            Start a Conversation <Send />
-          </Link>
-        </div>
-      </div>
+    <>
+      {/* CTA Strip (Moved out of footer) */}
+      <section className="cta-band">
+        <h3 style={{ fontSize: '1.75rem', marginBottom: '0.75rem', color: 'var(--text-primary)'}}>Ready to scale your data operations?</h3>
+        <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>Let's discuss your project. Response within 24 hours.</p>
+        <Link href="/contact" className="btn btn-primary">
+          Start a Conversation <Send style={{ width: '18px', height: '18px' }}/>
+        </Link>
+      </section>
 
-      {/* Main Footer */}
-      <div className="footer-inner">
+      <footer className="footer">
+        {/* Main Footer */}
+        <div className="footer-inner">
         <div className="container">
           <div className="footer-grid">
             <div className="footer-brand">
@@ -82,5 +81,6 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+    </>
   );
 }

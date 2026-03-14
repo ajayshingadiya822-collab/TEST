@@ -120,12 +120,14 @@ export default function Home() {
             </div>
             <h1 className="hero-title">
               Engineered for{' '}
-              <span
-                className="highlight"
-                id="typed-text"
-                data-phrases='["Massive Data Extraction.", "Intelligent Automation.", "Digital Infrastructure.", "Enterprise Scale.", "Process Engineering."]'
-              >
-                Massive Data Extraction.
+              <span className="typewriter-wrapper" style={{ display: 'inline-block' }}>
+                <span
+                  className="highlight"
+                  id="typed-text"
+                  data-phrases='["Massive Data Extraction.", "Intelligent Automation.", "Digital Infrastructure.", "Enterprise Scale.", "Process Engineering."]'
+                >
+                  Massive Data Extraction.
+                </span>
               </span>
               <span className="typed-cursor"></span>
             </h1>
@@ -139,7 +141,7 @@ export default function Home() {
               enterprise scale.
             </p>
 
-            <div className="hero-cta">
+            <div className="hero-buttons">
               <Link href="/contact" className="btn btn-primary">
                 Start a Project <Zap />
               </Link>
@@ -148,26 +150,26 @@ export default function Home() {
               </Link>
             </div>
 
-            <div className="hero-stats">
-              <div className="stat-item">
+            <div className="hero-stats stats-grid">
+              <div className="stat">
                 <span className="stat-number" data-count="100" data-suffix="K+">
                   0
                 </span>
                 <span className="stat-label">Records Processed Daily</span>
               </div>
-              <div className="stat-item">
+              <div className="stat">
                 <span className="stat-number" data-count="50" data-suffix="+">
                   0
                 </span>
                 <span className="stat-label">Projects Delivered</span>
               </div>
-              <div className="stat-item">
+              <div className="stat">
                 <span className="stat-number" data-count="5" data-suffix="★">
                   0
                 </span>
                 <span className="stat-label">Client Rating</span>
               </div>
-              <div className="stat-item">
+              <div className="stat">
                 <span className="stat-number" data-count="3" data-suffix=" Yrs">
                   0
                 </span>
@@ -179,8 +181,8 @@ export default function Home() {
       </section>
 
       {/* ── BENTO SERVICES ──────────────────────────────── */}
-      <section className="container reveal" style={{ paddingTop: 0 }}>
-        <div className="grid-bento">
+      <section className="container reveal">
+        <div className="grid-bento services-grid">
           <div className="bento-item bento-span-8 reveal">
             <div className="card-icon">
               <Database />

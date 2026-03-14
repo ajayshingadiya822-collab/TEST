@@ -70,12 +70,14 @@ export default function ServicesPage() {
           <div className="hero-head">
             <h1 className="hero-title">
               Technical{' '}
-              <span
-                className="highlight"
-                id="typed-text"
-                data-phrases='["Architectures.", "Web Scraping.", "Excel Automation.", "Python Engineering.", "Process Automation."]'
-              >
-                Architectures.
+              <span className="typewriter-wrapper" style={{ display: 'inline-block' }}>
+                <span
+                  className="highlight"
+                  id="typed-text"
+                  data-phrases='["Architectures.", "Web Scraping.", "Excel Automation.", "Python Engineering.", "Process Automation."]'
+                >
+                  Architectures.
+                </span>
               </span>
               <span className="typed-cursor"></span>
             </h1>
@@ -90,10 +92,10 @@ export default function ServicesPage() {
       </section>
 
       {/* Detailed Services */}
-      <section className="container" style={{ paddingTop: 0 }}>
-        <div className="grid-bento">
+      <section className="container">
+        <div className="grid-bento services-grid">
           <div className="bento-item bento-span-12 reveal" id="web-scraping">
-            <h2>01. Advanced Web Extraction</h2>
+            <h2 className="service-heading">01. Advanced Web Extraction</h2>
             <p
               style={{
                 color: 'var(--text-secondary)',
@@ -145,7 +147,7 @@ export default function ServicesPage() {
           </div>
 
           <div className="bento-item bento-span-6 reveal reveal-delay-1" id="python-automation">
-            <h3>02. Process Automation</h3>
+            <h2 className="service-heading">02. Process Automation</h2>
             <p style={{ color: 'var(--text-secondary)' }}>
               Redesigning legacy manual workflows into high-speed digital processes. We
               specialize in Python-based cloud functions and custom local agents.
@@ -168,7 +170,7 @@ export default function ServicesPage() {
             id="excel-automation"
             style={{ background: 'var(--bg-subtle)' }}
           >
-            <h3>03. Excel &amp; VBA Mastery</h3>
+            <h2 className="service-heading">03. Excel &amp; VBA Mastery</h2>
             <p style={{ color: 'var(--text-secondary)' }}>
               Transforming complex spreadsheets into robust applications. Ideal for
               corporate environments requiring local, secure data handling.
@@ -189,7 +191,7 @@ export default function ServicesPage() {
       </section>
 
       {/* How it Scales */}
-      <section className="container" style={{ paddingTop: '1rem' }}>
+      <section className="container">
         <div
           className="card"
           style={{

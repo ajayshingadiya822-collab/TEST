@@ -70,12 +70,14 @@ export default function ProfilePage() {
           <div className="hero-head">
             <h1 className="hero-title">
               Core{' '}
-              <span
-                className="highlight"
-                id="typed-text"
-                data-phrases='["Data Engineer.", "Automation Expert.", "Python Specialist.", "Ajay Shingadiya."]'
-              >
-                Architect.
+              <span className="typewriter-wrapper" style={{ display: 'inline-block' }}>
+                <span
+                  className="highlight"
+                  id="typed-text"
+                  data-phrases='["Data Engineer.", "Automation Expert.", "Python Specialist.", "Ajay Shingadiya."]'
+                >
+                  Architect.
+                </span>
               </span>
               <span className="typed-cursor"></span>
             </h1>
@@ -161,16 +163,16 @@ export default function ProfilePage() {
             </p>
 
             <h3 style={{ margin: '3rem 0 1.5rem' }}>The Engineering Stack</h3>
-            <div className="tech-stack">
-              <span className="tech-pill highlight">Rust (Compute Optim.) 🦀</span>
-              <span className="tech-pill highlight">Asynchronous Python 🐍</span>
-              <span className="tech-pill">Playwright / Selenium</span>
-              <span className="tech-pill">Docker &amp; Kubernetes</span>
-              <span className="tech-pill">PostgreSQL &amp; Redis</span>
-              <span className="tech-pill">AWS Lambda / S3</span>
-              <span className="tech-pill">CI/CD (GitHub Actions)</span>
-              <span className="tech-pill">API Gateway Mgmt</span>
-              <span className="tech-pill">Machine Learning (Classification)</span>
+            <div className="stack-grid">
+              <span className="stack-tag highlight" style={{ borderColor: 'var(--accent)' }}>Rust (Compute Optim.) 🦀</span>
+              <span className="stack-tag highlight" style={{ borderColor: 'var(--accent)' }}>Asynchronous Python 🐍</span>
+              <span className="stack-tag">Playwright / Selenium</span>
+              <span className="stack-tag">Docker &amp; Kubernetes</span>
+              <span className="stack-tag">PostgreSQL &amp; Redis</span>
+              <span className="stack-tag">AWS Lambda / S3</span>
+              <span className="stack-tag">CI/CD (GitHub Actions)</span>
+              <span className="stack-tag">API Gateway Mgmt</span>
+              <span className="stack-tag">Machine Learning (Classification)</span>
             </div>
 
             <h3 style={{ margin: '3rem 0 1.5rem' }}>Strategic Advantage</h3>

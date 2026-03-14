@@ -81,12 +81,14 @@ export default function StrategicPartnersPage() {
           <div className="hero-head">
             <h1 className="hero-title">
               Strategic{' '}
-              <span
-                className="highlight"
-                id="typed-text"
-                data-phrases='["Strategic Partners.", "Global Network.", "Enterprise Alliance.", "Scale Together."]'
-              >
-                Scalability.
+              <span className="typewriter-wrapper" style={{ display: 'inline-block' }}>
+                <span
+                  className="highlight"
+                  id="typed-text"
+                  data-phrases='["Strategic Partners.", "Global Network.", "Enterprise Alliance.", "Scale Together."]'
+                >
+                  Scalability.
+                </span>
               </span>
               <span className="typed-cursor"></span>
             </h1>
@@ -100,14 +102,11 @@ export default function StrategicPartnersPage() {
         </div>
       </section>
 
-      <section className="container" style={{ paddingTop: 0 }}>
-        <div className="grid-bento">
+      <section className="container">
+        <div>
           {/* Data Entry Partner */}
-          <div
-            className="bento-item bento-span-12 reveal"
-            style={{ borderLeft: '6px solid var(--accent)' }}
-          >
-            <span className="partner-badge">Data Processing Partner</span>
+          <div className="partner-card reveal">
+            <span className="partner-label">Data Processing Partner</span>
             <h2 style={{ fontSize: '2.5rem', marginBottom: '1.5rem' }}>
               Enterprise Data Operations
             </h2>
@@ -160,11 +159,8 @@ export default function StrategicPartnersPage() {
           </div>
 
           {/* IT/Software Partner */}
-          <div
-            className="bento-item bento-span-12 reveal reveal-delay-2"
-            style={{ borderLeft: '6px solid var(--accent)' }}
-          >
-            <span className="partner-badge">Software Engineering Partner</span>
+          <div className="partner-card reveal reveal-delay-2">
+            <span className="partner-label">Software Engineering Partner</span>
             <h2 style={{ fontSize: '2.5rem', marginBottom: '1.5rem' }}>
               Full-Stack Development &amp; IT
             </h2>
@@ -211,9 +207,9 @@ export default function StrategicPartnersPage() {
         </div>
       </section>
 
-      <section className="container" style={{ paddingTop: '1rem' }}>
+      <section className="container">
         <div
-          className="bento-item reveal"
+          className="partner-card reveal"
           style={{ textAlign: 'center', border: '1px dashed var(--border)' }}
         >
           <Building2
