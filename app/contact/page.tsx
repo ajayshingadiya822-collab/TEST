@@ -88,7 +88,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="container" style={{ paddingBottom: '4rem' }}>
+      <section className="container">
         <div className="contact-grid">
           <div className="contact-info reveal reveal-delay-1">
             <h2 style={{ marginBottom: '2.5rem' }}>Corporate Access</h2>

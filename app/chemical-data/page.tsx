@@ -89,7 +89,7 @@ export default function ChemicalDataPage() {
         </div>
       </section>
 
-      <section className="container" style={{ paddingTop: 0, paddingBottom: '3rem' }}>
+      <section className="container" style={{ paddingTop: 0 }}>
         <div className="grid-bento">
           <div className="bento-item bento-span-8 reveal">
             <h3>Catalog Automation</h3>
@@ -170,7 +170,7 @@ export default function ChemicalDataPage() {
         </div>
       </section>
 
-      <section className="container" style={{ paddingTop: '2rem', paddingBottom: '8rem' }}>
+      <section className="container" style={{ paddingTop: '2rem' }}>
         <div
           className="card reveal"
           style={{ textAlign: 'center', border: '1px solid var(--border)' }}

@@ -90,7 +90,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Detailed Services */}
-      <section className="container" style={{ paddingTop: 0, paddingBottom: '3rem' }}>
+      <section className="container" style={{ paddingTop: 0 }}>
         <div className="grid-bento">
           <div className="bento-item bento-span-12 reveal" id="web-scraping">
             <h2>01. Advanced Web Extraction</h2>
@@ -189,7 +189,7 @@ export default function ServicesPage() {
       </section>
 
       {/* How it Scales */}
-      <section className="container" style={{ paddingTop: '1rem', paddingBottom: '3rem' }}>
+      <section className="container" style={{ paddingTop: '1rem' }}>
         <div
           className="card"
           style={{

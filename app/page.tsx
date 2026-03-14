@@ -286,47 +286,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── TRUST STATS ─────────────────────────────────── */}
-      <section className="trust-bar">
-        <div className="container">
-          <div className="trust-bar-inner">
-            <div className="trust-stat reveal reveal-delay-1">
-              <span className="number" data-count="100" data-suffix="K+">
-                0
-              </span>
-              <span className="label">Records / Day</span>
-            </div>
-            <div className="trust-divider"></div>
-            <div className="trust-stat reveal reveal-delay-2">
-              <span className="number" data-count="99" data-suffix="%">
-                0
-              </span>
-              <span className="label">Data Accuracy</span>
-            </div>
-            <div className="trust-divider"></div>
-            <div className="trust-stat reveal reveal-delay-3">
-              <span className="number" data-count="50" data-suffix="+">
-                0
-              </span>
-              <span className="label">Projects Done</span>
-            </div>
-            <div className="trust-divider"></div>
-            <div className="trust-stat reveal">
-              <span className="number" data-count="24" data-suffix="hr">
-                0
-              </span>
-              <span className="label">Avg. Response</span>
-            </div>
-            <div className="trust-divider"></div>
-            <div className="trust-stat reveal reveal-delay-1">
-              <span className="number" data-count="10" data-suffix="+">
-                0
-              </span>
-              <span className="label">Industries Served</span>
-            </div>
-          </div>
-        </div>
-      </section>
+ 
 
       {/* ── ENGINEERING PROCESS ─────────────────────────── */}
       <section className="container">

@@ -193,7 +193,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="container" style={{ paddingBottom: '10rem' }}>
+      <section className="container">
         <div className="card" style={{ textAlign: 'center', border: '2px dashed var(--border)' }}>
           <h2 style={{ marginBottom: '1.5rem' }}>The Future of Data Ops</h2>
           <p

@@ -100,7 +100,7 @@ export default function StrategicPartnersPage() {
         </div>
       </section>
 
-      <section className="container" style={{ paddingTop: 0, paddingBottom: '3rem' }}>
+      <section className="container" style={{ paddingTop: 0 }}>
         <div className="grid-bento">
           {/* Data Entry Partner */}
           <div
@@ -211,7 +211,7 @@ export default function StrategicPartnersPage() {
         </div>
       </section>
 
-      <section className="container" style={{ paddingTop: '1rem', paddingBottom: '3rem' }}>
+      <section className="container" style={{ paddingTop: '1rem' }}>
         <div
           className="bento-item reveal"
           style={{ textAlign: 'center', border: '1px dashed var(--border)' }}
