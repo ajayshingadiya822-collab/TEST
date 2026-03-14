@@ -1,0 +1,414 @@
+HTML  →  Next.js
+MASTER CONVERSION DOCUMENT
+AI-Readable · Step-by-Step · Resume-Safe
+
+
+
+
+
+
+SECTION 1 — Project Overview
+
+
+1.1  What We Are Doing
+Converting a static HTML / CSS / JS website into a production-grade Next.js 14 (App Router) project, deployed on Vercel, connected to GitHub — without changing any content, copy, images, or design.
+
+1.2  Golden Rules
+NEVER change any visible content, text, images, or colors
+NEVER delete original HTML/CSS/JS files — work in nextjs-app/ folder only
+ONE phase at a time — complete and test each phase before moving on
+After every file is created, mark its row in the Progress Tracker as DONE
+If you run out of context, stop cleanly at the end of the current step
+On resume: read this document, read Progress Tracker, continue next PENDING step
+
+1.3  Tech Stack
+Next.js 14 — App Router (not Pages Router)
+React 18
+CSS Modules (mirrors original CSS files — zero restyling)
+Vercel — automatic deployment on every GitHub push
+GitHub — source of truth
+
+
+SECTION 2 — Folder Structure
+
+
+2.1  Your Repo Root (After Conversion)
+YOUR-REPO/
+├── index.html              ← original (do NOT touch)
+├── style.css               ← original (do NOT touch)
+├── script.js               ← original (do NOT touch)
+├── assets/                 ← original images/fonts (do NOT touch)
+├── MASTER_CONVERSION.docx  ← this file
+├── PROGRESS_TRACKER.md     ← AI updates this after each step
+└── nextjs-app/             ← ALL Next.js work happens here
+    ├── package.json
+    ├── next.config.js
+    ├── tsconfig.json
+    ├── .gitignore
+    ├── public/             ← copy assets here
+    └── app/
+        ├── layout.tsx      ← root layout (replaces <html><head>)
+        ├── page.tsx        ← home page (replaces index.html body)
+        ├── globals.css     ← global styles (from style.css)
+        └── [other-pages]/
+            └── page.tsx
+
+2.2  Naming Rules for AI
+Folder:  nextjs-app/  (lowercase, hyphen, no spaces)
+All component files use .tsx extension
+CSS module files:  ComponentName.module.css
+Images go in:  nextjs-app/public/images/
+Fonts go in:  nextjs-app/public/fonts/
+
+
+SECTION 3 — Phase 1: Setup & Scaffolding
+
+
+
+Step 1.1 — Create the Next.js app inside the subfolder
+Open a terminal in your repo root. Run these commands exactly:
+cd YOUR-REPO-ROOT
+npx create-next-app@latest nextjs-app \
+  --typescript \
+  --tailwind=false \
+  --eslint \
+  --app \
+  --src-dir=false \
+  --import-alias="@/*"
+
+When prompted, answer:
+Would you like to use Tailwind CSS? → No
+Would you like to use src/ directory? → No
+Would you like to customize the default import alias? → No
+
+Step 1.2 — Copy Assets to public/
+Copy all images, fonts, icons from the original repo into nextjs-app/public/. Keep the same subfolder structure.
+cp -r ../assets/* ./nextjs-app/public/
+If your original site has images inline in HTML (e.g. src="images/hero.jpg"), they will map to /images/hero.jpg in Next.js public folder.
+
+Step 1.3 — Configure next.config.js
+Open nextjs-app/next.config.js and replace its contents with:
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: 'export',  // static export for Vercel
+  trailingSlash: true,
+  images: { unoptimized: true },
+};
+module.exports = nextConfig;
+
+Step 1.4 — Test the scaffold runs
+cd nextjs-app
+npm run dev
+Open http://localhost:3000 — you should see the default Next.js welcome page. That is fine at this stage.
+
+
+
+SECTION 4 — Phase 2: Analyse Original HTML Files
+
+
+
+Step 2.1 — AI Must Read These Files
+AI: Open and read every file in the list below before proceeding. Do not skip any file.
+index.html — main home page
+Every other .html file in repo root
+style.css (and any other .css files)
+script.js (and any other .js files)
+List all image filenames found in HTML src attributes
+
+Step 2.2 — AI Creates File Map
+After reading, AI writes a section in PROGRESS_TRACKER.md with:
+List of all HTML files → what Next.js route each becomes
+List of all CSS files → how they will be imported
+List of all JS functions → will they become React hooks or useEffect calls
+List of all external scripts (CDN links) → must be added to layout.tsx
+
+Step 2.3 — Route Mapping Template
+Use this mapping:
+
+
+
+SECTION 5 — Phase 3: Convert CSS
+
+
+
+Step 3.1 — Create globals.css
+Copy your original style.css content into nextjs-app/app/globals.css. Rules:
+Keep ALL selectors, ALL rules exactly as they are
+Do NOT add Tailwind, do NOT refactor, do NOT rename classes
+Only change: url() paths for fonts/images must be updated to /fonts/ or /images/
+CSS variables (:root { }) stay in globals.css
+@import statements for Google Fonts stay as-is
+
+Step 3.2 — Import in layout.tsx
+At the top of nextjs-app/app/layout.tsx, add:
+import './globals.css';
+
+Step 3.3 — Multiple CSS Files
+If original site has multiple CSS files (style.css, animations.css, etc.), merge them all into globals.css in the same order they were linked in the original HTML <head>.
+
+Step 3.4 — Component-Specific Styles
+Only create .module.css files if a component needs styles that would conflict globally. For a simple site, everything in globals.css is fine.
+
+
+
+SECTION 6 — Phase 4: Build layout.tsx (Root Shell)
+
+
+
+Step 4.1 — layout.tsx Template
+Create nextjs-app/app/layout.tsx with:
+import type { Metadata } from 'next';
+import './globals.css';
+
+export const metadata: Metadata = {
+  title: 'COPY EXACT TITLE FROM index.html <title> TAG',
+  description: 'COPY EXACT meta description content',
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <head>
+        {/* ADD EXTERNAL SCRIPTS / FONTS FROM ORIGINAL <head> HERE */}
+      </head>
+      <body>
+        {children}
+      </body>
+    </html>
+  );
+}
+
+Step 4.2 — Checklist for layout.tsx
+Title tag — copied from original
+Meta description — copied from original
+Google Fonts <link> tags — copied from original <head>
+Any CDN script tags (e.g. Font Awesome) — copied from original <head>
+Favicon <link> — copied and asset placed in nextjs-app/public/
+Open Graph / Twitter Card meta tags — copied if present
+Do NOT copy JS <script> tags that were at bottom of body — handle in Step 6
+
+
+
+SECTION 7 — Phase 5: Convert HTML Pages to React
+
+
+
+Step 5.1 — HTML to JSX Conversion Rules
+AI must follow EVERY rule below when converting HTML to JSX:
+
+Step 5.2 — Page File Template
+export default function PageName() {
+  return (
+    <>
+      {/* PASTE JSX HERE — exact copy of original <body> content */}
+      {/* Remove <html>, <head>, <body> tags — those are in layout.tsx */}
+      {/* Remove <nav> and <footer> if they repeat — extract as components */}
+    </>
+  );
+}
+
+Step 5.3 — Images
+Simple rule: use a plain <img> tag first. It will work. Only switch to next/image if you want automatic WebP optimization. For exact visual parity, plain <img> is safer.
+
+Step 5.4 — Links
+Replace ALL <a href="page.html"> with Next.js <Link href="/page">. Import at top:
+import Link from 'next/link';
+
+Step 5.5 — Per-Page Checklist
+After creating each page.tsx, verify:
+Open browser → visually matches original HTML page
+All text content is identical (copy-paste comparison if needed)
+All images load correctly
+All links navigate correctly
+No console errors in browser DevTools
+
+
+
+SECTION 8 — Phase 6: Convert JavaScript
+
+
+
+Step 6.1 — Identify JS Type
+Read the original script.js and classify each piece:
+DOM manipulation on page load (e.g. adding classes) → useEffect
+Event listeners (click, scroll, resize) → useEffect + addEventListener
+Animations / scroll effects → useEffect
+Form validation → useState + inline event handlers
+Data fetching → async useEffect or React Server Component
+Simple utility functions (no DOM) → keep as plain TS functions
+
+Step 6.2 — useEffect Pattern
+When original JS runs on DOMContentLoaded:
+'use client';  // ← required at top of file if using hooks
+import { useEffect } from 'react';
+
+export default function MyPage() {
+  useEffect(() => {
+    // PASTE original JS code here
+    // Replace document.querySelector with ref if needed
+  }, []);  // empty deps = runs once on mount
+}
+
+Step 6.3 — Mobile Menu / Navbar Toggle
+This is the most common JS pattern. Convert like this:
+'use client';
+import { useState } from 'react';
+
+export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  return (
+    <nav>
+      <button onClick={() => setMenuOpen(!menuOpen)}>Menu</button>
+      <ul className={menuOpen ? 'open' : ''}>...
+    </nav>
+  );
+}
+
+Step 6.4 — 'use client' Rule
+Add 'use client' at top of ANY file that uses useState, useEffect, onClick, or window/document
+Server Components (no interactivity) do NOT need 'use client'
+layout.tsx does NOT need 'use client' unless it has interactive elements
+
+
+
+SECTION 9 — Phase 7: Extract Shared Components
+
+
+
+Step 7.1 — Create components/ folder
+nextjs-app/app/components/
+├── Navbar.tsx
+├── Footer.tsx
+└── [any other shared section].tsx
+
+Step 7.2 — Component Template
+// nextjs-app/app/components/Navbar.tsx
+import Link from 'next/link';
+
+export default function Navbar() {
+  return (
+    <nav>
+      {/* PASTE EXACT NAV HTML CONVERTED TO JSX */}
+    </nav>
+  );
+}
+
+Step 7.3 — Import in layout.tsx
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+
+// In the body:
+<body>
+  <Navbar />
+  {children}
+  <Footer />
+</body>
+
+
+
+SECTION 10 — Phase 8: Deploy to Vercel
+
+
+
+Step 8.1 — Push to GitHub
+git add .
+git commit -m 'Phase 8: Ready for Vercel deployment'
+git push origin main
+
+Step 8.2 — Vercel Project Settings (CRITICAL)
+When importing your repo on Vercel, you MUST configure the subfolder:
+Go to vercel.com → Add New Project → Import your GitHub repo
+In 'Configure Project' settings:
+Root Directory: set to   nextjs-app   (click Edit → type nextjs-app)
+Framework Preset: Next.js (auto-detected)
+Build Command: npm run build  (default — no change needed)
+Output Directory: leave blank (Next.js handles it)
+Click Deploy
+
+Step 8.3 — vercel.json (Alternative Method)
+If you prefer, add a vercel.json in your REPO ROOT (not inside nextjs-app):
+{
+  "buildCommand": "cd nextjs-app && npm run build",
+  "outputDirectory": "nextjs-app/.next",
+  "installCommand": "cd nextjs-app && npm install",
+  "framework": "nextjs"
+}
+
+Step 8.4 — Verify Deployment
+Vercel dashboard shows green 'Ready' status
+Visit the .vercel.app URL
+All pages load correctly
+All images display
+All links work
+Mobile view matches original
+
+Step 8.5 — Custom Domain (Optional)
+Vercel Dashboard → Your Project → Settings → Domains
+Add your domain and follow DNS configuration instructions
+SSL is automatic
+
+
+
+SECTION 11 — Progress Tracker
+
+AI: Update this table after completing each step. Change status to DONE. When resuming after a token limit, read this table first and start from the first PENDING row.
+
+
+
+SECTION 12 — Troubleshooting
+
+
+Common Errors & Fixes
+
+
+SECTION 13 — Resume After Token Limit
+
+
+
+
+PROGRESS_TRACKER.md Template
+Create this file in your repo root on Day 1. AI will update it automatically.
+# HTML → Next.js Conversion Progress
+
+## Status Key
+- DONE ✅
+- IN PROGRESS 🔄
+- PENDING ⬜
+
+## Phase 1: Setup
+- [ ] Scaffold created
+- [ ] Assets copied
+- [ ] next.config.js set
+
+## Phase 2: Analysis
+- [ ] All HTML files read
+- [ ] Route map written
+
+## Phase 3: CSS
+- [ ] globals.css created
+
+## Phase 4: Layout
+- [ ] layout.tsx created
+
+## Phase 5: Pages
+- [ ] index.html → app/page.tsx
+- [ ] [add each page]
+
+## Phase 6: JavaScript
+- [ ] All JS converted
+
+## Phase 7: Components
+- [ ] Navbar.tsx
+- [ ] Footer.tsx
+
+## Phase 8: Deploy
+- [ ] Pushed to GitHub
+- [ ] Vercel configured
+- [ ] Live URL verified
+
+
+End of Master Conversion Document  —  Generated for HTML → Next.js migration
