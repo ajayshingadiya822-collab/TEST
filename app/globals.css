@@ -941,22 +941,11 @@ section {
 /* ─── FOOTER ────────────────────────────────────────────── */
 
 .footer {
-    background: #050810;
+    background: var(--bg-base);
     position: relative;
     z-index: 1;
     padding: 0 0 2.5rem;
     margin-top: 2rem;
-
-    /* Force Dark Theme Variables for footer */
-    --bg-base: #050810;
-    --bg-surface: rgba(255, 255, 255, 0.04);
-    --bg-glass: rgba(255, 255, 255, 0.06);
-    --bg-glass-hover: rgba(255, 255, 255, 0.1);
-    --text-primary: #f0f2ff;
-    --text-secondary: #8892b0;
-    --text-muted: #4a5568;
-    --border: rgba(255, 255, 255, 0.08);
-    --border-accent: rgba(99, 102, 241, 0.4);
     color: var(--text-primary);
 }
 
